@@ -9,6 +9,7 @@
 using namespace std;
 
 void displayInstructions()
+// shows rules and layout of board.
 {
     cout << "Welcome to Tic-Tac-Toe. Enter numbers 0 through 8 to place your" <<
          " piece on the board (you are X). The board is laid out like so: " <<
@@ -16,10 +17,13 @@ void displayInstructions()
          "[0] [1] [2]" << endl <<
          "[3] [4] [5]" << endl <<
          "[6] [7] [8]" << endl <<
+         "Your goal is to get 3 consecutive pieces in a row," <<
+         "from top to bottom, left to right, or corner to corner." << endl <<
          "-----------" << endl;
 }
 
 void showBoard(Tile gameBoard[SIZE])
+// displays current board contents
 {
     for (int i = 0; i < SIZE; i++)
     {
@@ -49,6 +53,8 @@ void getMove(Player player, Tile gameBoard[SIZE], Tile tileType) {
     int move;
     bool valid_move = false;
     cout << "Make your move." << endl;
+
+    // depending on the player type, get moves using their respective process
     if (player == Computer) {
         cpuMove(gameBoard, tileType);
         return;
@@ -136,6 +142,7 @@ Tile checkWinner (Tile gb[SIZE]) {
 };
 
 bool checkDraw(Tile gameBoard[SIZE]) {
+    // if the board is full, that is a game over state.
     bool board_full = true;
     for (int i = 0; i < SIZE; i++) {
         if (gameBoard[i] == Empty)

@@ -9,6 +9,7 @@ using namespace std;
 // if i did this right, the AI should be unbeatable.
 
 void cpuMove(Tile gameBoard[SIZE], Tile tileType) {
+    // get and display move for computer player
     int move = getBestMove(gameBoard, tileType);
     cout << "> " << move << endl;
     cout << endl;
@@ -16,6 +17,7 @@ void cpuMove(Tile gameBoard[SIZE], Tile tileType) {
 }
 
 int getBestMove(Tile gameBoard[SIZE], Tile tileType) {
+    // check all possible moves and determine the best one
     int best_move = -1000;
     int best_value = -1000;
     // consider all possible moves
@@ -46,6 +48,7 @@ int getBestMove(Tile gameBoard[SIZE], Tile tileType) {
 }
 
 int cpuMax(Tile gameBoard[SIZE], Tile tileType, int depth) {
+    // first half of recursive minimax algorithm
     if (checkWin(gameBoard) || checkDraw(gameBoard) || depth > SIZE) {
         return score_move(gameBoard, tileType);
     }
@@ -76,6 +79,8 @@ int cpuMax(Tile gameBoard[SIZE], Tile tileType, int depth) {
 }
 
 int opponentMin(Tile gameBoard[SIZE], Tile tileType, int depth) {
+    // second half of recursive minimax algorithm
+
     if (checkWin(gameBoard) || checkDraw(gameBoard)) {
         return score_move(gameBoard, tileType);
     }
@@ -113,6 +118,7 @@ int opponentMin(Tile gameBoard[SIZE], Tile tileType, int depth) {
 }
 
 int score_move(Tile gameBoard[SIZE], Tile tileType) {
+    // determines value of board state
     if (checkWin(gameBoard))
     {
         Tile winner = checkWinner(gameBoard);
