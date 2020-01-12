@@ -60,6 +60,7 @@ void getMove(Player player, Tile gameBoard[SIZE], Tile tileType) {
             cout << "> ";
             cin.clear();
             cin >> move;
+            cout << endl;
 
             if (cin.fail())
                 continue;

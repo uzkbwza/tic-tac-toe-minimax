@@ -10,7 +10,8 @@ using namespace std;
 
 void cpuMove(Tile gameBoard[SIZE], Tile tileType) {
     int move = getBestMove(gameBoard, tileType);
-    cout << "Cpu picked: " << move << endl;
+    cout << "> " << move << endl;
+    cout << endl;
     gameBoard[move] = tileType;
 }
 
