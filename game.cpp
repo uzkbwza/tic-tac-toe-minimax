@@ -17,7 +17,7 @@ void displayInstructions()
          "[0] [1] [2]" << endl <<
          "[3] [4] [5]" << endl <<
          "[6] [7] [8]" << endl <<
-         "Your goal is to get 3 consecutive pieces in a row," <<
+         "Your goal is to get 3 consecutive pieces in a row, " <<
          "from top to bottom, left to right, or corner to corner." << endl <<
          "-----------" << endl;
 }
